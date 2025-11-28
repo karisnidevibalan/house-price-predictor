@@ -8,7 +8,7 @@ app = FastAPI()
 model = joblib.load("house_model.pkl")
 
 class Input(BaseModel):
-    data: Optional[list] = [8.3252, 41.0, 6.98, 1.02, 322, 2.55, 37.88, -122.23]
+    data: Optional[list] = [8.3252, 41.0, 6.98, 1.02, 322.0, 2.55, 37.88, -122.23]
 
 @app.post("/predict")
 def predict(input: Input = Input()):
